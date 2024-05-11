@@ -310,8 +310,8 @@ public class Calculatrice extends JFrame{
            op="\\+";
        else if(s.contains("-"))
            op="-";
-       else if(s.contains("*"))
-           op="\\*";
+       else if(s.contains("x"))
+           op="x";
        else if(s.contains("/"))
            op="/";
        else{
@@ -335,7 +335,7 @@ public class Calculatrice extends JFrame{
            case "\\+" :res=op1+op2;
                     break;
            case "-" :res=op1-op2;break;
-           case "\\*" :res=op1*op2;break;
+           case "x" :res=op1*op2;break;
            case "/" :if(op2==0){
                         throw new NoEnoughParameters("la division par 0 est impossible");
                     }
@@ -343,6 +343,7 @@ public class Calculatrice extends JFrame{
                     res=op1/op2;break;
            default :throw new NoEnoughParameters("opérateur non valide");
        }
+       sc.close();
                 return String.valueOf(res);
     }
     
